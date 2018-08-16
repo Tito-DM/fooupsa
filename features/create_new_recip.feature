@@ -17,5 +17,5 @@ Feature: Create a recipe
     When  I fill in 'Name' with ''
     And   I fill in 'Origin' with ''
     And   I press on 'create recipe'
-    Then  I should see 'Name can not be blank'
-    Then  I should see 'Origin can not be blank'
+    Then  I should see "Name can't be blank"
+    And  I should see "Origin can't be blank"

@@ -6,10 +6,14 @@ class RecipesController < ApplicationController
 
   def create
     #byebug
-    flash[:notice] = 'Recipe was successfully created'
     @recipe =  Recipe.new(recip_params)
-    @recipe.save
+
+    if @recipe.save
+    flash[:notice] = 'Recipe was successfully created'
     redirect_to recipe_path(@recipe)
+    else
+      render 'new'
+    end
   end
 
   def show
